@@ -9,5 +9,5 @@ public class ProjetDTO {
     private String description;
     private String path;
     private String stage;
-
+    private String username;
 }

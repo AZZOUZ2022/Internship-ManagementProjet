@@ -65,23 +65,18 @@ public class GestionStageApplication {
             accountService.addNewRole(new AppRole(null, "CHEF_FIL"));
             accountService.addNewRole(new AppRole(null, "ENCADRANT"));
             accountService.addNewRole(new AppRole(null, "ETUDIANT"));
+            accountService.addNewRole(new AppRole(null, "ENSEIGNANT"));
             accountService.addNewUser(new AppUser(null, "admin", "admin", new ArrayList<>()));
-            accountService.addNewUser(new AppUser(null, "Jimin", "1310", new ArrayList<>()));
-            accountService.addNewUser(new AppUser(null, "Jungkook", "7777", new ArrayList<>()));
-            accountService.addNewUser(new AppUser(null, "Namjoon", "7777", new ArrayList<>()));
-            accountService.addNewUser(new AppUser(null, "Jin", "7777", new ArrayList<>()));
-            accountService.addNewUser(new AppUser(null, "Yoongi", "7777", new ArrayList<>()));
-            accountService.addNewUser(new AppUser(null, "Hoseok", "7777", new ArrayList<>()));
-            accountService.addNewUser(new AppUser(null, "Taehyung", "7777", new ArrayList<>()));
+            accountService.addNewUser(new AppUser(null, "Khiat", "7777", new ArrayList<>()));
+            accountService.addNewUser(new AppUser(null, "Youssfi", "7777", new ArrayList<>()));
+            accountService.addNewUser(new AppUser(null, "Safaa", "7777", new ArrayList<>()));
             accountService.addRoleToUser("admin", "ADMIN");
-            accountService.addRoleToUser("Jimin", "CHEF_FIL");
-            accountService.addRoleToUser("Jungkook", "CHEF_FIL");
-            accountService.addRoleToUser("Namjoon", "ETUDIANT");
-            accountService.addRoleToUser("Jin", "ENCADRANT");
-            accountService.addRoleToUser("Yoongi", "ENCADRANT");
-            accountService.addRoleToUser("Hoseok", "CHEF_FIL");
-            accountService.addRoleToUser("Taehyung", "ETUDIANT");
-            Stream.of("Jimin", "Jungkook", "Hoseok").forEach(name -> {
+            accountService.addRoleToUser("Khiat", "CHEF_FIL");
+            accountService.addRoleToUser("Khiat", "ENSEIGNANT");
+            accountService.addRoleToUser("Youssfi", "ENCADRANT");
+            accountService.addRoleToUser("Youssfi", "ENSEIGNANT");
+            accountService.addRoleToUser("Safaa", "ETUDIANT");
+            Stream.of("Khiat", "Youssfi").forEach(name -> {
                 EnseignantDTO enseignantDTO = new EnseignantDTO();
                 enseignantDTO.setNom(name);
                 enseignantDTO.setUsername(name);
@@ -89,14 +84,14 @@ public class GestionStageApplication {
                 enseignantDTO.setResponsableFiliere(true);
                 enseignantService.saveEnseignant(enseignantDTO);
             });
-            Stream.of("Jin", "Yoongi").forEach(name -> {
+            Stream.of("Youssfi").forEach(name -> {
                 EncadrantPedagogiqueDTO encadrantPedagogiqueDTO = new EncadrantPedagogiqueDTO();
                 encadrantPedagogiqueDTO.setNom(name);
                 encadrantPedagogiqueDTO.setUsername(name);
                 encadrantPedagogiqueDTO.setEmail(name + "@gmail.com");
                 encadrantPedagogiqueService.saveEncadrantPedagogique(encadrantPedagogiqueDTO);
             });
-            Stream.of("Namjoon", "Taehyung").forEach(name -> {
+            Stream.of("Safaa").forEach(name -> {
                 EtudiantDTO etudiantDTO = new EtudiantDTO();
                 etudiantDTO.setNom(name);
                 etudiantDTO.setUsername(name);
@@ -107,10 +102,10 @@ public class GestionStageApplication {
             adminDTO.setLogin("admin");
             adminDTO.setPassword("admin");
             EtudiantDTO etudiantDTO = new EtudiantDTO();
-            etudiantDTO.setNom("aa");
-            etudiantDTO.setEmail("eee");
-            etudiantDTO.setUsername("user");
-            etudiantDTO.setPrenom("pernom");
+            etudiantDTO.setNom("Kaoutar");
+            etudiantDTO.setEmail("k");
+            etudiantDTO.setUsername("kaoutar");
+            etudiantDTO.setPrenom("BEN ESSARRAKH");
             etudiantDTO.setId(1L);
             etudiantDTO.setCIN("b12");
             etudiantDTO.setFiliere(new Filiere());
